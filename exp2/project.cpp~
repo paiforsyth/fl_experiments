@@ -12,6 +12,8 @@
  * #      ####### #    #  ####  #    # ###### #  ####  #    #   #
  */
 int main() {
-    auto r = af::range(1.0,af::dim4(2,3));
+    auto r = af::range(af::dim4(2,3), 1.0);
+    auto A = f1:Variable(r,true);
+    af::print("A",A.array())
     return 0;
 }
