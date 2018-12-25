@@ -41,9 +41,13 @@ int main() {
         weight.zeroGrad();
         bias.zeroGrad();
 
+        error+= loss.array();
+
     }
+    std::cout << "Epoch" << e << "Mean Squared Error: " << error.scalar<float>() <<std::endl;
   
   }
+  std::cout << "Linear Regression Done"<<std::endl; 
 
 
   return 0;
