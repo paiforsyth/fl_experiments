@@ -23,7 +23,7 @@ int main() {
   std::cout <<"X Dimensions: "<< X.dims() <<std:;endl;
   std::cout <<"Y Dimensions: "<< Y.dims() <<std:;endl;
 
-  fl::TensorDataset data({X,Y});
+//fl::TensorDataset data({X,Y});
   
   return 0;
 }
