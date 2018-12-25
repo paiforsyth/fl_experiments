@@ -17,4 +17,5 @@ int main() {
     auto B = fl::Variable(af::constant(2.0,af::dim4(2,3)  ),false );
     auto AB = A * B;
     af::print("AB", AB.array());
+    af::print("ABGrad", AB.grad().array());
 }
