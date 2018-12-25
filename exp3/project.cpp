@@ -15,9 +15,10 @@ int main() {
   const int nSamples = 10000;
   const int nFeat = 10;
   auto X = af::randu(nFeat,nSamples) +1;
-  auto signal = af::sum(af::pow(X,3),0);
+  auto signal = af::sum(af::pow(X,3),0).T();
   auto noise =  af::sin(2*M_PI *af::randu(nSamples));
-  af::print("signal", signal);
-  af::print("noise",noise);
+  //af::print("signal", signal);
+  //af::print("noise",noise);
+  auto Y = signal + noise;
   return 0;
 }
