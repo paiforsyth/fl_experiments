@@ -21,7 +21,6 @@ int main() {
   //af::print("signal", signal);
   //af::print("noise",noise);
   auto Y = signal + noise;
-  const int nEpochs = 100;
   const float learningRate = 0.001;
   auto weight = fl::Variable(af::randu(1,nFeat),true );
   auto bias = fl::Variable(af::constant(0.01,1), true);
