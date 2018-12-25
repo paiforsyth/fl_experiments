@@ -12,6 +12,7 @@
  * #      ####### #    #  ####  #    # ###### #  ####  #    #   #
  */
 int main() {
+  const int nEpochs = 100;
   const int nSamples = 10000;
   const int nFeat = 10;
   auto X = af::randu(nFeat,nSamples) +1;
@@ -20,9 +21,9 @@ int main() {
   //af::print("signal", signal);
   //af::print("noise",noise);
   auto Y = signal + noise;
-  const in nEpochs = 100;
+  const int nEpochs = 100;
   const float learningRate = 0.001;
-  auto weight = fl::Variable(aff::randu(1,nFeat),true );
+  auto weight = fl::Variable(af::randu(1,nFeat),true );
   auto bias = fl::Variable(af::constant(0.01,1), true);
 
   std::cout << "Linear Regression Started.."<<std::endl; 

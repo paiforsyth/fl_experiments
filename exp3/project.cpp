@@ -33,7 +33,7 @@ int main() {
         auto input = fl::Variable(X(af::span,i),false);
         auto yPred = fl::matmul(weight, input) + bias;
         auto yTrue = fl::Variable(Y(i),false);
-        auto loss = ( (yPred - yTrue) * (yPred - YTrue) ) / nSamples;
+        auto loss = ( (yPred - yTrue) * (yPred - yTrue) ) / nSamples;
 
         loss.backward();
         weight.array() = weight.array() - learningRate * weight.grad().array();
