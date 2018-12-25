@@ -20,7 +20,7 @@ int main() {
   //af::print("signal", signal);
   //af::print("noise",noise);
   auto Y = signal + noise;
-  fl::TensorDataset ds({X,Y} )
+  fl::TensorDataset ds({X,Y} );
   
   
   return 0;
