@@ -20,8 +20,8 @@ int main() {
   //af::print("signal", signal);
   //af::print("noise",noise);
   auto Y = signal + noise;
-  std::cout <<"X Dimensions: "<< X.dims() <<std:;endl;
-  std::cout <<"Y Dimensions: "<< Y.dims() <<std:;endl;
+  std::cout <<"X Dimensions: "<< X.dims() <<std::endl;
+  std::cout <<"Y Dimensions: "<< Y.dims() <<std::endl;
 
 //fl::TensorDataset data({X,Y});
   
