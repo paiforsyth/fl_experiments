@@ -12,6 +12,6 @@
  * #      ####### #    #  ####  #    # ###### #  ####  #    #   #
  */
 int main() {
-    auto r = af::range(1.0,af::dim4(2,3);
+    auto r = af::range(af::dim4(2,3), 1.0);
     return 0;
 }
