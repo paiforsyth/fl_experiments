@@ -20,5 +20,35 @@ int main() {
   //af::print("signal", signal);
   //af::print("noise",noise);
   auto Y = signal + noise;
+  const in nEpochs = 100;
+  const float learningRate = 0.001;
+  auto weight = fl::Variable(aff::randu(1,nFeat),true );
+  auto bias = fl::Variable(af::constant(0.01,1), true);
+
+  std::cout << "Linear Regression Started.."<<std::endl; 
+  for (int e =1; e <= nEpochs; ++e){
+    af::array error = af::constant(0,1);
+    for (int i = 0; i < nSamples; ++i){
+        auto input = fl::Variable(X(af::span,i),false);
+        auto yPred = fl::matmul(weight, input) + bias;
+        auto yTrue = fl::Variable(Y(i),false);
+        auto loss = ( (yPred - yTrue) * (yPred - YTrue) ) / nSamples;
+
+        loss.backward();
+        weight.array() = weight.array() - learningRate * weight.grad().array();
+        bias.array() = bias.array() -learningRate * bias.grad().array();
+
+        weight.zeroGrad();
+        bias.zeroGrad();
+
+        error+= loss.array();
+
+    }
+    std::cout << "Epoch" << e << "Mean Squared Error: " << error.scalar<float>() <<std::endl;
+  
+  }
+  std::cout << "Linear Regression Done"<<std::endl; 
+
+
   return 0;
 }
