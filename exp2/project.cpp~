@@ -12,9 +12,6 @@
  * #      ####### #    #  ####  #    # ###### #  ####  #    #   #
  */
 int main() {
-  fl::Variable v(af::array(1), true);
-  auto result = v + 10;
-  std::cout << "Hello World!" << std::endl;
-  af::print("Array value is ", result.array());
-  return 0;
+    auto r = af::range(1.0,af::dim4(2,3));
+    return 0;
 }
